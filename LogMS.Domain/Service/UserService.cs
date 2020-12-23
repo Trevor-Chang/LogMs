@@ -1,5 +1,4 @@
 ﻿using LogMS.Db;
-using LogMS.Domain.Helper;
 using LogMS.Domain.Model.DTO;
 using LogMS.Domain.Model.Interface;
 using LogMS.Domain.Service.Interface;
@@ -24,16 +23,14 @@ namespace LogMS.Domain.Service
                 return null;
             }
 
-            var targetuser = this._logmsContext.Admin
-                .Where(o => o.Account == userDTO.Account && o.Password == userDTO.Password && o.Enable == true)
+            var targetuser = this._logmsContext.Admins
+                .Where(o => o.Account == userDTO.Account && o.Password == userDTO.Password && o.EntityStatus == (int)EntityStatus.上架)
                 .Select(o => new UserDTO
                 {
                     Id = o.Id,
                     Account = o.Account,
                     Password = o.Password,
-                    UserName = o.Name,
-                    CreateDate = o.CreateDate,
-                    Enable = o.Enable
+                    UserName = o.Name
                 })
                 .FirstOrDefault();
 

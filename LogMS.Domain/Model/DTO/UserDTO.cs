@@ -3,7 +3,7 @@ using System;
 
 namespace LogMS.Domain.Model.DTO
 {
-    public class UserDTO : IUserDTO
+    public class UserDTO : IUserDTO, IUserAuthData
     {
         /// <summary>
         /// 資料編號
@@ -24,15 +24,5 @@ namespace LogMS.Domain.Model.DTO
         /// 姓名
         /// </summary>
         public string UserName { get; set; }
-
-        /// <summary>
-        /// 建立日期
-        /// </summary>
-        public DateTime CreateDate { get; set; }
-
-        /// <summary>
-        /// 啟用狀態
-        /// </summary>
-        public bool Enable { get; set; }
     }
 }

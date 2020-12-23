@@ -17,6 +17,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\LogMS.Db\LogMS.Db.csproj" />
+    <ProjectReference Include="..\LogMS.Tool\LogMS.Tool.csproj" />
   </ItemGroup>
 
 </Project>

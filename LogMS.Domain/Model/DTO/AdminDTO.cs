@@ -28,6 +28,6 @@ namespace LogMS.Domain.Model.DTO
         /// <summary>
         /// 啟用狀態
         /// </summary>
-        public bool Enable { get; set; }
+        public int EntityStatus { get; set; }
     }
 }

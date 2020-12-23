@@ -1,5 +1,4 @@
 using LogMS.Db;
-using LogMS.Domain.Extension;
 using LogMS.Domain.Service;
 using LogMS.Domain.Service.Interface;
 using Microsoft.AspNetCore.Authentication.Cookies;

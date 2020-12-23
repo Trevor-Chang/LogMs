@@ -12,16 +12,25 @@ namespace LogMS.Db
         /// 資料編號
         /// </summary>
         public int Id { get; set; }
+        /// <summary>
+        /// 帳號
+        /// </summary>
         public string Account { get; set; }
+        /// <summary>
+        /// 密碼
+        /// </summary>
         public string Password { get; set; }
         /// <summary>
         /// 姓名
         /// </summary>
         public string Name { get; set; }
+        /// <summary>
+        /// 建立時間
+        /// </summary>
         public DateTime CreateDate { get; set; }
         /// <summary>
         /// 狀態
         /// </summary>
-        public bool Enable { get; set; }
+        public int EntityStatus { get; set; }
     }
 }

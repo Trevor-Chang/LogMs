@@ -18,7 +18,7 @@ namespace LogMS.Db
         {
         }
 
-        public virtual DbSet<Admin> Admin { get; set; }
+        public virtual DbSet<Admin> Admins { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -26,22 +26,29 @@ namespace LogMS.Db
 
             modelBuilder.Entity<Admin>(entity =>
             {
+                entity.ToTable("Admin");
+
                 entity.Property(e => e.Id).HasComment("資料編號");
 
                 entity.Property(e => e.Account)
                     .IsRequired()
-                    .HasMaxLength(50);
+                    .HasMaxLength(50)
+                    .HasComment("帳號");
 
-                entity.Property(e => e.CreateDate).HasColumnType("datetime");
+                entity.Property(e => e.CreateDate)
+                    .HasColumnType("datetime")
+                    .HasComment("建立時間");
 
-                entity.Property(e => e.Enable).HasComment("狀態");
+                entity.Property(e => e.EntityStatus).HasComment("狀態");
 
                 entity.Property(e => e.Name)
                     .IsRequired()
                     .HasMaxLength(50)
                     .HasComment("姓名");
 
-                entity.Property(e => e.Password).IsRequired();
+                entity.Property(e => e.Password)
+                    .IsRequired()
+                    .HasComment("密碼");
             });
 
             OnModelCreatingPartial(modelBuilder);

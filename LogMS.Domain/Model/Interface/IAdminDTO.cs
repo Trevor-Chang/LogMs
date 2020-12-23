@@ -12,6 +12,6 @@ namespace LogMS.Domain.Model.Interface
 
         DateTime CreateDate { get; set; }
 
-        bool Enable { get; set; }
+        int EntityStatus { get; set; }
     }
 }
