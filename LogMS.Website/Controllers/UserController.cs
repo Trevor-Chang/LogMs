@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace LogMS.Website.Controllers
 {
-    public class UserController : Controller
+    public class UserController : BaseController
     {
         public IUserService _userService { get; set; }
 

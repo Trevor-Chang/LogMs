@@ -22,7 +22,6 @@ public class UserAuthHelper
         //執行登入，相當於以前的FormsAuthentication.SetAuthCookie()
         //從組態讀取登入逾時設定
         int loginExpireMinute = int.Parse(ConfigHelper.Login["ExpireMinute"]);
-
         HttpContextHelper.Current.SignInAsync(
             principal,
             new AuthenticationProperties()
