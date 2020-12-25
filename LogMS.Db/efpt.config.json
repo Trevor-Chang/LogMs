@@ -15,6 +15,14 @@
       {
          "Name": "[dbo].[Admin]",
          "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[AdminToMenu]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Menu]",
+         "ObjectType": 0
       }
    ],
    "UseDatabaseNames": true,

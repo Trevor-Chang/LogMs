@@ -9,11 +9,11 @@ namespace LogMS.Domain.Service
 {
     public class UserService : IUserService
     {
-        public LogmsContext _logmsContext { get; set; }
+        public LogmsContext _DbContext { get; set; }
 
         public UserService(LogmsContext context)
         {
-            _logmsContext = context;
+            _DbContext = context;
         }
 
         public IUserDTO VerifyUser (IUserDTO userDTO)
@@ -23,7 +23,7 @@ namespace LogMS.Domain.Service
                 return null;
             }
 
-            var targetuser = this._logmsContext.Admins
+            var targetuser = this._DbContext.Admins
                 .Where(o => o.Account == userDTO.Account && o.Password == userDTO.Password && o.EntityStatus == (int)EntityStatus.上架)
                 .Select(o => new UserDTO
                 {

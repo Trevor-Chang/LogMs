@@ -1,0 +1,8 @@
+﻿@model LogMS.Domain.Model.Interface.IAdminDTO
+<li class="dropdown top-menu-item-xs">
+    <a href="" class="dropdown-toggle profile waves-effect waves-light" data-toggle="dropdown" aria-expanded="true"><img src="~/images/users/avatar-1.jpg" alt="user-img" class="img-circle"> </a>
+    <ul class="dropdown-menu">
+        <li><a><i class="ti-user m-r-10 text-custom"></i>@Model.Name</a></li>
+        <li><a href="@Url.Action("SignOut","User")"><i class="ti-power-off m-r-10 text-danger"></i> 登出</a></li>
+    </ul>
+</li>

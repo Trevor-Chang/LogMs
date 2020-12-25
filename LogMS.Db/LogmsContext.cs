@@ -19,6 +19,8 @@ namespace LogMS.Db
         }
 
         public virtual DbSet<Admin> Admins { get; set; }
+        public virtual DbSet<AdminToMenu> AdminToMenus { get; set; }
+        public virtual DbSet<Menu> Menus { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -49,6 +51,59 @@ namespace LogMS.Db
                 entity.Property(e => e.Password)
                     .IsRequired()
                     .HasComment("密碼");
+            });
+
+            modelBuilder.Entity<AdminToMenu>(entity =>
+            {
+                entity.ToTable("AdminToMenu");
+
+                entity.Property(e => e.Id).HasComment("資料編號");
+
+                entity.Property(e => e.AdminId).HasComment("Admin資料編號");
+
+                entity.Property(e => e.MenuId).HasComment("Menu資料編號");
+
+                entity.HasOne(d => d.Admin)
+                    .WithMany(p => p.AdminToMenus)
+                    .HasForeignKey(d => d.AdminId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_AdminToMenu_Admin");
+
+                entity.HasOne(d => d.Menu)
+                    .WithMany(p => p.AdminToMenus)
+                    .HasForeignKey(d => d.MenuId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_AdminToMenu_Menu");
+            });
+
+            modelBuilder.Entity<Menu>(entity =>
+            {
+                entity.ToTable("Menu");
+
+                entity.Property(e => e.Id).HasComment("資料編號");
+
+                entity.Property(e => e.CreateDate)
+                    .HasColumnType("datetime")
+                    .HasComment("建立時間");
+
+                entity.Property(e => e.Creator).HasComment("建立人員");
+
+                entity.Property(e => e.EditDate)
+                    .HasColumnType("datetime")
+                    .HasComment("編輯持間");
+
+                entity.Property(e => e.Editor).HasComment("編輯人員");
+
+                entity.Property(e => e.Key)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .HasComment("KEY");
+
+                entity.Property(e => e.Name)
+                    .IsRequired()
+                    .HasComment("名稱");
+
+                entity.Property(e => e.Url).HasComment("路徑");
             });
 
             OnModelCreatingPartial(modelBuilder);

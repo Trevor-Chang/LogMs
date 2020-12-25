@@ -21,6 +21,11 @@ namespace LogMS.Domain.Model.DTO
         public string Password { get; set; }
 
         /// <summary>
+        /// 姓名
+        /// </summary>
+        public string Name { get; set; }
+
+        /// <summary>
         /// 建立日期
         /// </summary>
         public DateTime CreateDate { get; set; }

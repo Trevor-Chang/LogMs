@@ -6,9 +6,9 @@ using System.Collections.Generic;
 
 namespace LogMS.Db
 {
-    public partial class Admin
+    public partial class Menu
     {
-        public Admin()
+        public Menu()
         {
             AdminToMenus = new HashSet<AdminToMenu>();
         }
@@ -18,25 +18,34 @@ namespace LogMS.Db
         /// </summary>
         public int Id { get; set; }
         /// <summary>
-        /// 帳號
+        /// KEY
         /// </summary>
-        public string Account { get; set; }
+        public string Key { get; set; }
         /// <summary>
-        /// 密碼
-        /// </summary>
-        public string Password { get; set; }
-        /// <summary>
-        /// 姓名
+        /// 名稱
         /// </summary>
         public string Name { get; set; }
+        /// <summary>
+        /// 路徑
+        /// </summary>
+        public string Url { get; set; }
+        public int? Parent { get; set; }
         /// <summary>
         /// 建立時間
         /// </summary>
         public DateTime CreateDate { get; set; }
         /// <summary>
-        /// 狀態
+        /// 建立人員
         /// </summary>
-        public int EntityStatus { get; set; }
+        public int Creator { get; set; }
+        /// <summary>
+        /// 編輯持間
+        /// </summary>
+        public DateTime? EditDate { get; set; }
+        /// <summary>
+        /// 編輯人員
+        /// </summary>
+        public int? Editor { get; set; }
 
         public virtual ICollection<AdminToMenu> AdminToMenus { get; set; }
     }

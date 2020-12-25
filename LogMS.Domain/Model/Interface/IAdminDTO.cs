@@ -10,6 +10,8 @@ namespace LogMS.Domain.Model.Interface
 
         string Password { get; set; }
 
+        string Name { get; set; }
+
         DateTime CreateDate { get; set; }
 
         int EntityStatus { get; set; }
