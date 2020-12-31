@@ -12,4 +12,8 @@
     <ProjectReference Include="..\LogMS.Domain\LogMS.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Views\Menu\" />
+  </ItemGroup>
+
 </Project>

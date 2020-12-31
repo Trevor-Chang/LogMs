@@ -32,7 +32,8 @@ namespace LogMS.Website
 
             var connString = Configuration.GetSection("ConnectionStrings:DefaultConnection").Value;
             services.AddDbContext<LogmsContext>(options =>
-                options.UseSqlServer(connString));
+                options.UseSqlServer(connString).UseLazyLoadingProxies()
+            );
 
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(option =>
             {
@@ -43,6 +44,7 @@ namespace LogMS.Website
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IAdminService, AdminService>();
+            services.AddScoped<INavService, NavService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

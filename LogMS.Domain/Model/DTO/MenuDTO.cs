@@ -28,7 +28,7 @@ namespace LogMS.Domain.Model.DTO
         /// <summary>
         /// 父層編號
         /// </summary>
-        public int Parent { get; set; }
+        public int? Parent { get; set; }
 
         /// <summary>
         /// 建立日期
@@ -48,6 +48,6 @@ namespace LogMS.Domain.Model.DTO
         /// <summary>
         /// 編輯人員
         /// </summary>
-        public int Editor { get; set; }
+        public int? Editor { get; set; }
     }
 }

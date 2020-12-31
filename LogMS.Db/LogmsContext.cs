@@ -67,13 +67,13 @@ namespace LogMS.Db
                     .WithMany(p => p.AdminToMenus)
                     .HasForeignKey(d => d.AdminId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_AdminToMenu_Admin");
+                    .HasConstraintName("FK_AdminToMenu_Admin1");
 
                 entity.HasOne(d => d.Menu)
                     .WithMany(p => p.AdminToMenus)
                     .HasForeignKey(d => d.MenuId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_AdminToMenu_Menu");
+                    .HasConstraintName("FK_AdminToMenu_Menu1");
             });
 
             modelBuilder.Entity<Menu>(entity =>

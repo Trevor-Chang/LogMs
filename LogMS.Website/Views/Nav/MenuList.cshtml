@@ -1,0 +1,24 @@
+﻿@model LogMS.Domain.Model.Interface.INavDTO
+<div class="left side-menu">
+    <div class="sidebar-inner slimscrollleft">
+        <!--- Divider -->
+        <div id="sidebar-menu">
+            <ul>
+                @foreach (var main in Model.AllMenus.Where(x => x.Parent == null))
+                {
+                    <li class="has_sub">
+                        <a href="javascript:void(0);" class="waves-effect"><i class="ti-home"></i> <span>@main.Name</span> <span class="menu-arrow"></span></a>
+                        <ul class="list-unstyled">
+                            @foreach (var sub in Model.AllMenus.Where(x => x.Parent == main.Id))
+                            {
+                                <li><a href="@sub.Url">@sub.Name</a></li>
+                            }
+                        </ul>
+                    </li>
+                }
+            </ul>
+            <div class="clearfix"></div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>

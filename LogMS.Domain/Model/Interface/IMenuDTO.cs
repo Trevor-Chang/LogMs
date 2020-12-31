@@ -12,7 +12,7 @@ namespace LogMS.Domain.Model.Interface
 
         string Url { get; set; }
 
-        int Parent { get; set; }
+        int? Parent { get; set; }
 
         DateTime CreateDate { get; set; }
 
@@ -20,6 +20,6 @@ namespace LogMS.Domain.Model.Interface
 
         DateTime? EditDate { get; set; }
 
-        int Editor { get; set; }
+        int? Editor { get; set; }
     }
 }

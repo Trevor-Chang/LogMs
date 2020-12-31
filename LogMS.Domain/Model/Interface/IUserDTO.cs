@@ -1,6 +1,11 @@
-﻿namespace LogMS.Domain.Model.Interface
+﻿using System.Collections.Generic;
+
+namespace LogMS.Domain.Model.Interface
 {
-    public interface IUserDTO : IUserAuthData
+    public interface INavDTO
     {
+        IEnumerable<IMenuDTO> AllMenus { get; set; }
+
+        IEnumerable<IMenuDTO> CurrentMenus { get; set; }
     }
 }
