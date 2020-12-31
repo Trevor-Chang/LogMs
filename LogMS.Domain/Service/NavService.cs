@@ -43,7 +43,7 @@ namespace LogMS.Domain.Service
                     CreateDate = x.CreateDate,
                     Editor = x.Editor.Value,
                     EditDate = x.EditDate,
-                    Parent = x.Parent
+                    ParentId = x.ParentId
                 }).ToList();
 
                 //Set NavData

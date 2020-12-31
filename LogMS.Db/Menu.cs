@@ -29,7 +29,10 @@ namespace LogMS.Db
         /// 路徑
         /// </summary>
         public string Url { get; set; }
-        public int? Parent { get; set; }
+        /// <summary>
+        /// 父層menu資料編號
+        /// </summary>
+        public int? ParentId { get; set; }
         /// <summary>
         /// 建立時間
         /// </summary>

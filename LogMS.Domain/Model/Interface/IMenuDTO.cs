@@ -12,7 +12,7 @@ namespace LogMS.Domain.Model.Interface
 
         string Url { get; set; }
 
-        int? Parent { get; set; }
+        int? ParentId { get; set; }
 
         DateTime CreateDate { get; set; }
 

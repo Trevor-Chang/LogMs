@@ -103,6 +103,8 @@ namespace LogMS.Db
                     .IsRequired()
                     .HasComment("名稱");
 
+                entity.Property(e => e.ParentId).HasComment("父層menu資料編號");
+
                 entity.Property(e => e.Url).HasComment("路徑");
             });
 

@@ -20,7 +20,14 @@ namespace LogMS.Website.Controllers
         {
             var result = _navService.ListNavData(UserAuthHelper.GetUserData().Id);
 
-            return View(result.ResultData);
+            var allmenus = result.ResultData.AllMenus;
+            var currentmenus = result.ResultData.CurrentMenus;
+            var levelonemenus = allmenus.Where(x => !x.ParentId.HasValue).ToList();
+
+            ViewBag.AllMenus = allmenus;
+            ViewBag.CurrentMenus = currentmenus;
+
+            return View(levelonemenus);
         }
     }
 }

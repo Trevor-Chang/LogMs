@@ -28,7 +28,7 @@ namespace LogMS.Domain.Model.DTO
         /// <summary>
         /// 父層編號
         /// </summary>
-        public int? Parent { get; set; }
+        public int? ParentId { get; set; }
 
         /// <summary>
         /// 建立日期
